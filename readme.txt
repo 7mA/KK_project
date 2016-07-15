@@ -1,8 +1,9 @@
-Git is a version control system.
-Git is free software.
-i love guo guo.
-and this is a change just for test.
-now this is the last change !maybe...
-oh...there is no end for the changes.
-for change
-another change
+# KK固定资产管理系统 自述文件 #
+---
+### 该项目使用多层结构进行开发，数据库使用MSSQLSERVER ，开发语言为JAVA，界面为控制台。 ###
+### 该项目使用了 ###
+* List、Map等泛型集合
+* 面向对象编程
+* 每个类里面都有相应注释
+
+> KK固定资产管理系统由大连KK软件开发有限公司ラブラブクラブ小组研发，为您提供优质、高效、便捷、安全的服务。
