@@ -3,6 +3,7 @@ package cn.kk.entity;
  * 
  * @author Liuyu
  * create 2016-7-16
+ *
  */
 public class Asset {
 	/**
@@ -77,8 +78,8 @@ public class Asset {
 	public String getBuyTime() {
 		return buyTime;
 	}
-	public void setBuyTime(String buyTime){
-		this.buyTime=buyTime;
+	public void setBuyTime(String buyTime) {
+		this.buyTime = buyTime;
 	}
 	public int getState() {
 		return state;
