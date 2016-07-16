@@ -1,0 +1,5 @@
+package cn.kk.dao;
+
+public interface AdminstratorDao {
+	Adminstrator find(String name,String pwd);
+}
