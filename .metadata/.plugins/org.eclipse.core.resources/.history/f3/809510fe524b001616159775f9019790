@@ -1,10 +1,5 @@
 package cn.kk.entity;
-/**
- * 
- * @author Liuyu
- * create 2016-7-16
- *
- */
+
 public class Asset {
 	/**
 	 * Asset id
