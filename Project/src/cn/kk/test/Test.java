@@ -6,7 +6,6 @@ package cn.kk.test;
  * modify by Gu Lingmei 2016-7-17
  */
 import cn.kk.*;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,16 +15,18 @@ import java.util.*;
 public class Test {
 
 	public static void main(String[] args) {
-		Test test=new Test();
-		Scanner input=new Scanner(System.in);
 		ManagerLogin();
-		
+		Menu();
+	}
+	public static void Menu(){
 		System.out.println("Please choose function:");
 		System.out.println("1.Modify password");
 		System.out.println("2.Personnel information management");
 		System.out.println("3.Fixed assets information management");
 		System.out.println("4.Fixed assets using management");
 		System.out.println("5.Exit system");
+		Test test=new Test();
+		Scanner input=new Scanner(System.in);
 		int choice=input.nextInt();
 		switch(choice){
 		case 1:
@@ -40,9 +41,12 @@ public class Test {
 		case 4:
 			test.AssetUseManage();
 			break;
+		case 5:
+			System.out.println("Thank you for using this system!");
+			break;
 		default:
 			System.out.println("Without this option!Please choose again!");
-			//返回主菜单
+			test.Menu();
 			break;
 		}
 	}
@@ -54,14 +58,13 @@ public class Test {
 		System.out.println("Welcome to KK Fixed Assets Management System");
 		System.out.println("If you're a manager,please login.");
 		//实现管理员登录
-		
 	}
 	/**
 	 * Manager Modifies his password
 	 */
 	public void ModPwd(){
 		//修改密码
-		//返回主菜单
+		Menu();
 	}
 	/**
 	 * Personnel information management
@@ -77,26 +80,23 @@ public class Test {
 		switch(choice){
 		case 1:
 			//增加人员信息
-			//返回主菜单
+			Menu();
 			break;
 		case 2:
 			//删除人员信息
-			//返回主菜单
+			Menu();
 			break;
 		case 3:
 			//修改人员信息
-			//返回主菜单
+			Menu();
 			break;
 		case 4:
 			//显示人员信息
-			//返回主菜单
-			break;
-		case 5:
-			System.out.println("Thsnk you for using this system!");
+			Menu();
 			break;
 		default:	
 			System.out.println("Without this option!Please choose again!");
-			//返回主菜单
+			PersonInfoManage();
 			break;
 		}
 	}
@@ -118,39 +118,39 @@ public class Test {
 		switch(choice){
 		case 1:
 			//增加资产类
-			//返回主菜单
+			Menu();
 			break;
 		case 2:
 			//删除资产类
-			//返回主菜单
+			Menu();
 			break;
 		case 3:
 			//修改资产类
-			//返回主菜单
+			Menu();
 			break;
 		case 4:
 			//显示资产类别
-			//返回主菜单
+			Menu();
 			break;
 		case 5:
 			//增加资产信息
-			//返回主菜单
+			Menu();
 			break;
 		case 6:
 			//删除资产信息
-			//返回主菜单
+			Menu();
 			break;
 		case 7:
 			//修改资产信息
-			//返回主菜单
+			Menu();
 			break;
 		case 8:
 			//显示资产信息
-			//返回主菜单
+			Menu();
 			break;
 		default:
 			System.out.println("Without this option!Please choose again!");
-			//返回主菜单
+			AssetInfoManage();
 			break;
 		}
 	}
@@ -162,30 +162,32 @@ public class Test {
 		System.out.println("Please choose function:");
 		System.out.println("1.Lend a fixed asset");
 		System.out.println("2.Return a fixed asset");
-		System.out.println("3.Inquire fixed assets ");
+		System.out.println("3.Inquiry fixed assets ");
 		System.out.println("4.Browse fixed assets using information");
 		int choice=input.nextInt();
 		switch(choice){
 		case 1:
 			//资产领用
-			//返回主菜单
+			Menu();
 			break;
 		case 2:
 			//资产归还
-			//返回主菜单
+			Menu();
 			break;
 		case 3:
 			//资产查询
-			//返回主菜单
+			Menu();
 			break;
 		case 4:
 			//浏览资产使用情况
-			//返回主菜单
+			Menu();
 			break;
 		default:
 			System.out.println("Without this option!Please choose again!");
-			//返回主菜单
+			AssetUseManage();
 			break;
 		}
 	}
+	
 }
+
