@@ -2,7 +2,6 @@ package cn.kk.dao;
 
 import java.util.List;
 
-import cn.kk.entity.Administrator;
 import cn.kk.entity.Asset;
 import cn.kk.entity.Staff;
 /**
@@ -12,7 +11,7 @@ import cn.kk.entity.Staff;
  */
 
 public interface StaffDao {
-	int lend(Staff s,Asset a,Administrator ad);
+	int lend(Staff s,Asset a);
 	int returnAsset(Asset a);
 	List<Asset> findAsset(Staff s);
 }
