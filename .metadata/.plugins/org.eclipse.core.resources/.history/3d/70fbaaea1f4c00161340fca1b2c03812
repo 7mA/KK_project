@@ -16,11 +16,7 @@ public class StaffManage {
 	 * @return
 	 */
 	public int lend(Staff s, Asset a,Administrator ad){
-		if(a.getState()==0 && a.getUser()==null){
-			return staffdao.lend(s, a, ad);
-		}else{
-			return 0;
-		}
+		return staffdao.lend(s, a, ad);
 	}
 	/**
 	 * return asset
@@ -28,10 +24,6 @@ public class StaffManage {
 	 * @return
 	 */
 	public int returnAsset(Asset a){
-		if(a.getUser()!=null){
-			return staffdao.returnAsset(a);
-		}else{
-			return 0;
-		}
+		return staffdao.returnAsset(a);
 	}
 }

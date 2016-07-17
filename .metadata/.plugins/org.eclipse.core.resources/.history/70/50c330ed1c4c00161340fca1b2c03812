@@ -31,9 +31,6 @@ public class Asset {
 	private String buyTime;
 	/**
 	 * Asset state
-	 * 0:normal
-	 * 1:repairing
-	 * 2.unusable
 	 */
 	private int state;
 	/**
