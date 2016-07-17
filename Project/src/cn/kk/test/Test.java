@@ -3,7 +3,7 @@ package cn.kk.test;
  * 
  * @author Gu Lingmei
  * create 2016-7-16
- *
+ * modify by Gu Lingmei 2016-7-17
  */
 import cn.kk.*;
 
@@ -46,6 +46,9 @@ public class Test {
 			break;
 		}
 	}
+	/**
+	 * Manager login
+	 */
 	public static void ManagerLogin(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("Welcome to KK Fixed Assets Management System");
@@ -53,10 +56,16 @@ public class Test {
 		//实现管理员登录
 		
 	}
+	/**
+	 * Manager Modifies his password
+	 */
 	public void ModPwd(){
-		//增加人员信息
+		//修改密码
 		//返回主菜单
 	}
+	/**
+	 * Personnel information management
+	 */
 	public void PersonInfoManage(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("Please choose function:");
@@ -67,6 +76,8 @@ public class Test {
 		int choice=input.nextInt();
 		switch(choice){
 		case 1:
+			//增加人员信息
+			//返回主菜单
 			break;
 		case 2:
 			//删除人员信息
@@ -89,6 +100,9 @@ public class Test {
 			break;
 		}
 	}
+	/**
+	 * Fixed assets information management
+	 */
 	public void AssetInfoManage(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("Please choose function:");
@@ -140,6 +154,9 @@ public class Test {
 			break;
 		}
 	}
+	/**
+	 * Fixed assets using management
+	 */
 	public void AssetUseManage(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("Please choose function:");
