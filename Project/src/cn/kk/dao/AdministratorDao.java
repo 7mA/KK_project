@@ -7,6 +7,18 @@ import cn.kk.entity.Administrator;
  * @create 2016-07-16
  */
 public interface AdministratorDao {
-	Administrator find(String name,String pwd); //find by name and password
-	int setPwd(Administrator ad,String pwd); //set password
+	/**
+	 * find by name and password
+	 * @param name
+	 * @param pwd
+	 * @return
+	 */
+	Administrator find(String name,String pwd);
+	/**
+	 * set password
+	 * @param ad
+	 * @param pwd
+	 * @return
+	 */
+	int setPwd(Administrator ad,String pwd);
 }

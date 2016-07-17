@@ -63,7 +63,7 @@ public interface AssetDao {
 	 * @param id
 	 * @return
 	 */
-	Asset queryById(int id); 
+	List<Asset> queryById(int id); 
 	/**
 	 * query by User
 	 * @param user

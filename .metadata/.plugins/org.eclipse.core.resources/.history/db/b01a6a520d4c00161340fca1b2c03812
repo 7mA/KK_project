@@ -11,7 +11,7 @@ import cn.kk.entity.Administrator;
  */
 
 public class AdministratorImpl extends BaseDao implements AdministratorDao{
-	
+
 	@Override
 	public Administrator find(String name, String pwd) {
 		// TODO Auto-generated method stub

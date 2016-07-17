@@ -52,4 +52,10 @@ public class StaffImpl extends BaseDao implements StaffDao{
 		return num;
 	}
 
+	@Override
+	public List<Asset> findAsset(Staff s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

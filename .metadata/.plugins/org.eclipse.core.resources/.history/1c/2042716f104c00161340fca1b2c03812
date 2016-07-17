@@ -26,4 +26,10 @@ public interface StaffDao {
 	 * @return
 	 */
 	int returnAsset(Asset a);
+	/**
+	 * find all assets being used by a certain user
+	 * @param s
+	 * @return
+	 */
+	List<Asset> findAsset(Staff s); 
 }

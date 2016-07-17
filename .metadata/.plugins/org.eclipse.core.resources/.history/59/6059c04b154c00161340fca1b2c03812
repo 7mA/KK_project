@@ -17,32 +17,19 @@ public class AssetImpl extends BaseDao implements AssetDao{
 	@Override
 	public int add(Asset a) {
 		// TODO Auto-generated method stub
-		String sql="insert into asset (name,subCategory,model,worth,buyTime,state,[user],ps)"
-				+ "values(?,?,?,?,?,?,?,?)";
-		java.sql.Date time =java.sql.Date.valueOf(a.getBuyTime());
-		Object[] param={a.getName(),a.getCategory(),a.getModel(),a.getWorth(),time,a.getUser(),a.getPs()};
-		int num=this.executeUpdate(sql, param);
-		return num;
+		return 0;
 	}
 
 	@Override
 	public int update(Asset a) {
 		// TODO Auto-generated method stub
-		String sql="update asset set name=?,subCategory=?,model=?,worth=?,buyTime=?,state=?,[user]=?,ps=? "
-				+ "where id=?";
-		java.sql.Date time =java.sql.Date.valueOf(a.getBuyTime());
-		Object[] param={a.getName(),a.getCategory(),a.getModel(),a.getWorth(),time,a.getUser(),a.getPs()};
-		int num=this.executeUpdate(sql, param);
-		return num;
+		return 0;
 	}
 
 	@Override
 	public int delete(Asset a) {
 		// TODO Auto-generated method stub
-		String sql="delete from asset where id=?";
-		Object[] param={a.getId()};
-		int num=this.executeUpdate(sql, param);
-		return num;
+		return 0;
 	}
 
 	@Override
