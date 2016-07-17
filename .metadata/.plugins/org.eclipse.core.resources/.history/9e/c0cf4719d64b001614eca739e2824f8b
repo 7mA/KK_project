@@ -12,7 +12,7 @@ import cn.kk.entity.Staff;
  */
 
 public interface StaffDao {
-	int lend(Staff s,Asset a,Administrator ad); //lend asset
-	int returnAsset(Asset a); //return asset
-	List<Asset> findAsset(Staff s);  //find all assets being used by a certain user
+	int lend(Staff s,Asset a,Administrator ad);
+	int returnAsset(Asset a);
+	List<Asset> findAsset(Staff s);
 }

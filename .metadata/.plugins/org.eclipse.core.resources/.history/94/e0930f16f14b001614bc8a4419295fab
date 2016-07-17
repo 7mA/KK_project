@@ -26,9 +26,8 @@ public class StaffImpl extends BaseDao implements StaffDao{
 		Calendar ca=Calendar.getInstance();
 		StringBuffer sb=new StringBuffer(ca.get(Calendar.YEAR)+"-"+(ca.get(Calendar.MONTH)+1)+"-"
 				+ca.get(Calendar.DATE));	
-		java.sql.Date time =java.sql.Date.valueOf(sb.toString());
 		String sql="insert into lend (assetId,lendTime,administrator,usage,ps)values(?,?,?,?,?)";
-		Object[] param={a.getId(),time,ad.getName(),usage,ps};
+		Object[] param={a.getId(),sb.toString(),ad.getName(),usage,ps};
 		int num=this.executeUpdate(sql, param);
 		sql="update asset set [user]=? where id=?";
 		Object[] param2={s.getName(),a.getId()};
@@ -39,17 +38,7 @@ public class StaffImpl extends BaseDao implements StaffDao{
 	@Override
 	public int returnAsset(Asset a) {
 		// TODO Auto-generated method stub
-		Calendar ca=Calendar.getInstance();
-		StringBuffer sb=new StringBuffer(ca.get(Calendar.YEAR)+"-"+(ca.get(Calendar.MONTH)+1)+"-"
-				+ca.get(Calendar.DATE));
-		java.sql.Date time =java.sql.Date.valueOf(sb.toString());
-		String sql="update lend set returnTime=? where assetId=? and returnTime=null";
-		Object[] param={time,a.getId()};
-		int num=this.executeUpdate(sql, param);
-		sql="update asset set [user]=? where id=?";
-		Object[] param2={null,a.getId()};
-		this.executeUpdate(sql, param2);
-		return num;
+		return 0;
 	}
 
 	@Override
