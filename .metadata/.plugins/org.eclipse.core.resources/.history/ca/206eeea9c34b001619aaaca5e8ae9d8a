@@ -52,7 +52,7 @@ public class Test {
 	public static void ManagerLogin(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("Welcome to KK Fixed Assets Management System");
-		System.out.println("If you're a manager,please login.");
+		System.out.println("If you're a management,please login.");
 		//实现管理员登录
 		
 	}

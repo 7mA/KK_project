@@ -4,11 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import cn.kk.entity.Administrator;
-/**
- * 
- * @author Guo Deji
- * @create 2016-07-17
- */
 
 public class AdministratorImpl extends BaseDao implements AdministratorDao{
 

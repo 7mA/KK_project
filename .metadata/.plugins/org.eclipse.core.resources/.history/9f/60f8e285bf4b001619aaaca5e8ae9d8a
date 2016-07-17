@@ -8,5 +8,5 @@ import cn.kk.entity.Administrator;
  */
 public interface AdministratorDao {
 	Administrator find(String name,String pwd);
-	int setPwd(Administrator ad,String pwd);
+	Administrator setPwd(Administrator ad,String pwd);
 }
