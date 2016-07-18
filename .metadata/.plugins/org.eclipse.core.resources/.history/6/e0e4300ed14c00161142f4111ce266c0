@@ -42,7 +42,7 @@ public class AssetImpl extends BaseDao implements AssetDao{
 		String sql="select [user] from asset where id=?";
 		Object[] param={a.getId()};
 		ResultSet rs=this.executeQuery(sql, param);
-		String user="";
+		String user=null;
 		try {
 			if(rs.next()){
 				user=rs.getString("[user]");
@@ -51,7 +51,7 @@ public class AssetImpl extends BaseDao implements AssetDao{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(user!=null){
+		if(user==null){
 			return 0;
 		}else{
 			sql="delete from asset where id=?";
@@ -72,22 +72,8 @@ public class AssetImpl extends BaseDao implements AssetDao{
 	@Override
 	public int deleteSubCategory(String subCtg) {
 		// TODO Auto-generated method stub
-		String sql="select [user] from asset where subCategory=?";
+		String sql="delete from asset where subCategory=?";
 		Object[] param={subCtg};
-		ResultSet rs=this.executeQuery(sql, param);
-		String user="";
-		try {
-			while(rs.next()){
-				user=rs.getString("[user]");
-				if(user!=null){
-					return 0;
-				}
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		sql="delete from asset where subCategory=?";
 		this.executeUpdate(sql, param);
 		sql="delete from category where subCategory=?";
 		int num=this.executeUpdate(sql, param);
@@ -100,23 +86,6 @@ public class AssetImpl extends BaseDao implements AssetDao{
 		String sql="select * from category where category=?";
 		Object[] param={ctg};
 		ResultSet rs=this.executeQuery(sql, param);
-		try {
-			sql="select [user] from asset where subCategory=?";
-			while(rs.next()){
-				Object[] param2={rs.getString("subCategory")};
-				ResultSet rs2=this.executeQuery(sql, param);
-				String user="";
-				while(rs2.next()){
-					user=rs2.getString("[user]");
-					if(user!=null){
-						return 0;
-					}
-				}
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		int num=0;
 		try {
 			while(rs.next()){

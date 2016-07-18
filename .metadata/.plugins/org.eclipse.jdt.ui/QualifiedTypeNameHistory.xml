@@ -6,12 +6,20 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="cn.kk.entity.Staff"/>
-<fullyQualifiedTypeName name="cn.kk.entity.Asset"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="cn.kk.entity.Administrator"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="cn.kk.entity.Administrator"/>
+<fullyQualifiedTypeName name="cn.kk.dao.AdministratorDao"/>
+<fullyQualifiedTypeName name="cn.kk.dao.AdministratorImpl"/>
+<fullyQualifiedTypeName name="cn.kk.dao.AssetDao"/>
+<fullyQualifiedTypeName name="cn.kk.dao.AssetImpl"/>
+<fullyQualifiedTypeName name="cn.kk.entity.Asset"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="cn.kk.dao.StaffDao"/>
+<fullyQualifiedTypeName name="cn.kk.dao.StaffImpl"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>
