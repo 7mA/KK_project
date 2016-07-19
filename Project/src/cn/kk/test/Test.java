@@ -66,7 +66,7 @@ public class Test {
 		Scanner input=new Scanner(System.in);
 		System.out.println("Please enter your name.");
 		String name=input.next();
-		System.out.println("Please enter your pasaword.");
+		System.out.println("Please enter your password.");
 		String pwd=input.next();
 		Administrator ad=admin.login(name,pwd);
 		if(ad!=null){
@@ -84,10 +84,10 @@ public class Test {
 		//修改密码
 		AdministratorManage admin=new AdministratorManage();
 		Scanner input=new Scanner(System.in);
-		System.out.println("Please enter your new pasaword.");
+		System.out.println("Please enter your new password.");
 		String pwd=input.next();
 		admin.setPwd(ad, pwd);
-		System.out.println("Modify new pasaword succeed.");
+		System.out.println("Modify new password succeed.");
 		Menu(ad);
 	}
 
@@ -111,7 +111,7 @@ public class Test {
 		System.out.println("Please choose function:");
 		System.out.println("1.Add fixed assets category");
 		System.out.println("2.Delete fixed assets subcategory");
-		System.out.println("3.Delete fixed assets subcategory");
+		System.out.println("3.Delete fixed assets category");
 		System.out.println("4.Add fixed assets information");
 		System.out.println("5.Delete fixed assets information");
 		System.out.println("6.Modify fixed assets information");
@@ -127,31 +127,40 @@ public class Test {
 			subcategory=input.next();
 			System.out.println("Please enter the category the subcategory belongs to.");
 			category=input.next();
-			asset.addCategory(subcategory,category);
-			System.out.println("Add succeed.");
+			int num=asset.addCategory(subcategory,category);
+			if(num==1){
+				System.out.println("Add succeed.");
+			}else{
+				System.out.println("Add failed.");
+			}
 			Menu(ad);
 			break;
 		case 2:
 			//删除资产小类
 			System.out.println("Please enter the subcategory you want delete.");
 			category=input.next();
-			asset.deleteCategory(category);
-			System.out.println("Delete subcategory succeed.");
+			int num1=asset.deleteSubCategory(category);
+			if(num1!=0){
+				System.out.println("Delete subcategory succeed.");
+			}else{
+				System.out.println("Delete subcategory failed.");
+			}
 			Menu(ad);
 			break;
 		case 3:	
 			//删除资产大类
 			System.out.println("Please enter the category you want delete.");
 			category=input.next();
-			asset.deleteSubCategory(subcategory);
-			System.out.println("Delete subcategory succeed.");
+			int num2=asset.deleteCategory(category);
+			if(num2!=0){
+				System.out.println("Delete category succeed.");
+			}else{
+				System.out.println("Delete category failed.");
+			}
 			Menu(ad);
 			break;
 		case 4:
 			//增加资产信息
-			System.out.println("Please enter the asset's id which you want to add.");
-			id=input.nextInt();
-			a.setId(id);
 			System.out.println("Please enter the asset's name.");
 			name=input.next();
 			a.setName(name);
@@ -171,16 +180,16 @@ public class Test {
 			System.out.println("Asset state: 0.normal 1.repairing 2.unusable.");
 			state=input.nextInt();
 			a.setState(state);
-			System.out.println("If the asset is lent,please enter the asset's user else enter ' ' .");
-			System.out.println("Please enter the asset's user.");
-			user=input.next();
-			a.setUser(user);
 			System.out.println("If you have sth to remark,please enter the asset's ps else enter ' ' .");
 			System.out.println("Please enter the asset's ps.");
 			ps=input.next();
 			a.setPs(ps);
-			asset.add(a);
-			System.out.println("Add asset succeed.");
+			int num3=asset.add(a);
+			if(num3!=0){
+				System.out.println("Add asset succeed.");
+			}else{
+				System.out.println("Add asset failed.");
+			}
 			Menu(ad);
 			break;
 		case 5:
@@ -188,8 +197,12 @@ public class Test {
 			System.out.println("Please enter the asset's id which you want to delete.");
 			id=input.nextInt();
 			a.setId(id);
-			asset.delete(a);
-			System.out.println("Delete asset succeed.");
+			int num4=asset.delete(a);
+			if(num4==1){
+				System.out.println("Delete asset succeed.");
+			}else{
+				System.out.println("Delete asset failed.");
+			}
 			Menu(ad);
 			break;
 		case 6:
@@ -216,49 +229,72 @@ public class Test {
 			System.out.println("Asset state: 0.normal 1.repairing 2.unusable.");
 			state=input.nextInt();
 			a.setState(state);
-			System.out.println("If the asset is lent,please enter the asset's user else enter ' ' .");
-			System.out.println("Please enter the asset's user.");
-			user=input.next();
-			a.setUser(user);
 			System.out.println("If you have sth to remark,please enter the asset's ps else enter ' ' .");
 			System.out.println("Please enter the asset's ps.");
 			ps=input.next();
 			a.setPs(ps);		
-			asset.update(a);
-			System.out.println("Modify asset succeed.");
+			int num5=asset.update(a);
+			if(num5==1){
+				System.out.println("Modify asset succeed.");
+			}else{
+				System.out.println("Modify asset failed.");
+			}
 			Menu(ad);
 			break;
 		case 7:
 			//通过小类查询资产
 			System.out.println("Please enter the asset's subcategory which you want to inquiry.");
 			subcategory=input.next();
-			asset.queryBySubCtg(subcategory);
+			List<Asset> as=asset.queryBySubCtg(subcategory);
+			for(Asset a1:as){
+				a1.show();
+			}
+			if(as.isEmpty()){
+				System.out.println("No result!");
+			}
 			Menu(ad);
 			break;
 		case 8:
 			//通过大类查询资产
 			System.out.println("Please enter the asset's category which you want to inquiry.");
 			category=input.next();
-			asset.queryByCtg(category);
+			List<Asset> as1=asset.queryByCtg(category);
+			for(Asset a1:as1){
+				a1.show();
+			}
+			if(as1.isEmpty()){
+				System.out.println("No result!");
+			}
 			Menu(ad);
 			break;
 		case 9:
 			//通过id查询资产
 			System.out.println("Please enter the asset's id which you want to inquiry.");
 			id=input.nextInt();
-			asset.queryById(id);
+			Asset a1=asset.queryById(id);
+			if(a1!=null){
+				a1.show();
+			}else{
+				System.out.println("No result!");
+			}
 			Menu(ad);
 			break;
 		case 10:
 			//通过用户查询资产
 			System.out.println("Please enter the asset's user which you want to inquiry.");
 			user=input.next();
-			asset.queryByUser(user);
+			List<Asset> as2=asset.queryByUser(user);
+			for(Asset a2:as2){
+				a2.show();
+			}
+			if(as2.isEmpty()){
+				System.out.println("No result!");
+			}
 			Menu(ad);
 			break;
 		default:
-			System.out.println("Without this option!Please choose again!");
-			AssetInfoManage(ad);
+			System.out.println("Without this option!");
+			Menu(ad);
 			break;
 		}
 	}
@@ -286,11 +322,14 @@ public class Test {
 			System.out.println("Please enter asset's id.");
 			id=input.nextInt();
 			a.setId(id);
-			System.out.println("Please enter administrator's name.");
-			name=input.next();
-			admin.setName(name);
-			staff.lend(s,a,admin);
-			System.out.println("Lend assets succeed.");
+			AssetManage am=new AssetManage();
+			a=am.queryById(id);
+			int num=staff.lend(s,a,ad);
+			if(num!=0){
+				System.out.println("Lend assets succeed.");
+			}else{
+				System.out.println("Lend assets failed.");
+			}
 			Menu(ad);
 			break;
 		case 2:
@@ -298,14 +337,19 @@ public class Test {
 			System.out.println("Please enter asset's id which will be returned.");
 			id=input.nextInt();
 			a.setId(id);
-			staff.returnAsset(a);
-			System.out.println("Return assets succeed.");
+			AssetManage am1=new AssetManage();
+			a=am1.queryById(id);
+			int num1=staff.returnAsset(a);
+			if(num1!=0){
+				System.out.println("Return assets succeed.");
+			}else{
+				System.out.println("Return assets failed.");
+			}
 			Menu(ad);
 			break;
-		
 		default:
-			System.out.println("Without this option!Please choose again!");
-			AssetUseManage(ad);
+			System.out.println("Without this option!");
+			Menu(ad);
 			break;
 		}
 	}

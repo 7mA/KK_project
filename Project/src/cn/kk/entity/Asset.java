@@ -101,5 +101,18 @@ public class Asset {
 	public void setPs(String ps) {
 		this.ps = ps;
 	}
+	public void show() {
+		// TODO Auto-generated method stub
+		System.out.println("ID:"+id);
+		System.out.println("Name:"+name);
+		System.out.println("Category:"+category);
+		System.out.println("Model:"+model);
+		System.out.println("Worth:"+worth);
+		System.out.println("BuyTime:"+buyTime);
+		System.out.println("state:"+state+"(0.normal 1.repairing 2.unusable)");
+		System.out.println("User:"+user);
+		System.out.println("P.s. Information:"+ps);
+		System.out.print("\n");
+	}
 
 }

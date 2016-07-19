@@ -41,14 +41,16 @@ public class StaffImpl extends BaseDao implements StaffDao{
 		// TODO Auto-generated method stub
 		Calendar ca=Calendar.getInstance();
 		StringBuffer sb=new StringBuffer(ca.get(Calendar.YEAR)+"-"+(ca.get(Calendar.MONTH)+1)+"-"
-				+ca.get(Calendar.DATE));
+				+ca.get(Calendar.DATE));	
 		java.sql.Date time =java.sql.Date.valueOf(sb.toString());
-		String sql="update lend set returnTime=? where assetId=? and returnTime=null";
+		String sql="update lend set returnTime=? where assetId=? and returnTime is null";
 		Object[] param={time,a.getId()};
 		int num=this.executeUpdate(sql, param);
-		sql="update asset set [user]=? where id=?";
-		Object[] param2={null,a.getId()};
-		this.executeUpdate(sql, param2);
+		if(num!=0){
+			sql="update asset set [user]=? where id=?";
+			Object[] param2={null,a.getId()};
+			this.executeUpdate(sql, param2);
+		}	
 		return num;
 	}
 
