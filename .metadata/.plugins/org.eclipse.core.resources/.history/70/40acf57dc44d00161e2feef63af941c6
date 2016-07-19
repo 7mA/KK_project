@@ -324,13 +324,9 @@ public class Test {
 			a.setId(id);
 			AssetManage am=new AssetManage();
 			a=am.queryById(id);
-			if(a!=null){
-				int num=staff.lend(s,a,ad);
-				if(num!=0){
-					System.out.println("Lend assets succeed.");
-				}else{
-					System.out.println("Lend assets failed.");
-				}
+			int num=staff.lend(s,a,ad);
+			if(num!=0){
+				System.out.println("Lend assets succeed.");
 			}else{
 				System.out.println("Lend assets failed.");
 			}

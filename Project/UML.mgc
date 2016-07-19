@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="cn.kk.entity.Administrator" x="711" y="260">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.test.Test" x="17" y="391">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="cn.kk.manage.StaffManage"/>
+        <Communication destinationClassName="cn.kk.manage.AdministratorManage"/>
+        <Communication destinationClassName="cn.kk.entity.Staff"/>
+        <Communication destinationClassName="cn.kk.entity.Asset"/>
+        <Communication destinationClassName="cn.kk.manage.AssetManage"/>
+    </Class>
+    <Class name="cn.kk.manage.StaffManage" x="564" y="-66">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="cn.kk.dao.StaffDao"
+            endpointName="staffdao" kind="Simple"/>
+        <Communication destinationClassName="cn.kk.dao.StaffDao"/>
+        <Communication destinationClassName="cn.kk.entity.Asset"/>
+    </Class>
+    <Class name="cn.kk.manage.AdministratorManage" x="290" y="-65">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="cn.kk.dao.AdministratorDao"
+            endpointName="admindao" kind="Simple"/>
+        <Communication destinationClassName="cn.kk.dao.AdministratorDao"/>
+    </Class>
+    <Class name="cn.kk.dao.AssetImpl" x="22" y="180">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="cn.kk.dao.AssetDao"/>
+        <Extension destinationClassName="cn.kk.dao.BaseDao"/>
+        <Communication destinationClassName="cn.kk.dao.BaseDao"/>
+        <Communication destinationClassName="cn.kk.entity.Asset"/>
+    </Class>
+    <Class name="cn.kk.dao.BaseDao" x="273" y="337">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.dao.StaffImpl" x="544" y="179">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="cn.kk.dao.StaffDao"/>
+        <Extension destinationClassName="cn.kk.dao.BaseDao"/>
+        <Communication destinationClassName="cn.kk.entity.Administrator"/>
+        <Communication destinationClassName="cn.kk.dao.BaseDao"/>
+        <Communication destinationClassName="cn.kk.entity.Staff"/>
+        <Communication destinationClassName="cn.kk.entity.Asset"/>
+    </Class>
+    <Class name="cn.kk.entity.Staff" x="724" y="372">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.dao.StaffDao" x="635" y="98">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.dao.AssetDao" x="197" y="108">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.entity.Asset" x="592" y="289">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="cn.kk.manage.AssetManage" x="39" y="-85">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="cn.kk.dao.AssetDao"
+            endpointName="assetdao" kind="Simple"/>
+        <Communication destinationClassName="cn.kk.dao.AssetDao"/>
+    </Class>
+    <Class name="cn.kk.dao.AdministratorImpl" x="302" y="190">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="cn.kk.dao.BaseDao"/>
+        <Extension destinationClassName="cn.kk.dao.AdministratorDao"/>
+        <Communication destinationClassName="cn.kk.entity.Administrator"/>
+        <Communication destinationClassName="cn.kk.dao.BaseDao"/>
+    </Class>
+    <Class name="cn.kk.dao.AdministratorDao" x="340" y="103">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>
