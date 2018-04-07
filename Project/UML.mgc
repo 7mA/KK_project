@@ -121,7 +121,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="cn.kk.manage.AssetManage" x="39" y="-85">
+    <Class name="cn.kk.manage.AssetManage" x="21" y="-89">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -133,7 +133,7 @@
             endpointName="assetdao" kind="Simple"/>
         <Communication destinationClassName="cn.kk.dao.AssetDao"/>
     </Class>
-    <Class name="cn.kk.dao.AdministratorImpl" x="302" y="190">
+    <Class name="cn.kk.dao.AdministratorImpl" x="300" y="212">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>

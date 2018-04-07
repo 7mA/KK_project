@@ -1,0 +1,8 @@
+package cn.kk.test;
+
+public class Adapter extends EuroPlugin implements IPlugin{
+	public void providePowerCN(){
+		System.out.println("This is a adapter that can change a foreign plugin to a Chinese plugin.");
+		super.providePowerEU();
+	}
+}
